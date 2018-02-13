@@ -45,19 +45,28 @@ then
     e_header "Running functional tests"
     for file in ./test/*functional-tests.sh
     do
-        e_arrow "${file}"
+        # Running unit tests
+        e_arrow "Running: ${file}"
+        docker run --rm \
+          --security-opt seccomp=unconfined \
+          -v "$(pwd)":/source \
+          -e "TERM=xterm-256color" supergarotinho/bashtest "${file}" "${kcov_cmd[@]}"
+        result=$?
+        [ $result -eq 0 ] && e_success "${file} passed!"
+        [ ! $result -eq 0 ] && e_error "${file} failed!" && failed=true
     done
 fi
 
 e_header "Running spellcheck..."
-for file in ./**/*.sh
+while read -r -u 9
 do
+    file="${REPLY}"
     e_arrow "Running spellcheck on: ${file}"
     docker run -v "$(pwd)":/mnt koalaman/shellcheck "${file}"
     result=$?
     [ $result -eq 0 ] && e_success "${file} passed!"
     [ ! $result -eq 0 ] && e_error "${file} failed!" && failed=true
-done
+done 9< <(find . -type f -not -path "*/coverage/*" -iname "*.sh")
 
 # TO generate a json and then put somewhere in the build
 

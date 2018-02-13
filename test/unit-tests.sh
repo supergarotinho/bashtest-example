@@ -13,14 +13,16 @@ testCleanVariable() {
     assertEquals "Expected \"${expected}\", but returned ${returned}" "${expected}" "${returned}"
 # Regex optins
 #    assertTrue "Expected \"${expected}\", but returned ${returned}" \
-#        "[[ ${retorno} =~ ^${PADRAO_FONTE}/\\.\\./${PADRAO_REGEX_ARQ_TMP} ]]"
+#        "[[ ${retorno} =~ ^${SOME_VAR}/\\.\\./${SOME_VAR} ]]"
 }
 
 oneTimeSetUp() {
     #source ${DIRETORIO_EXECUCAO}/testes-common.sh
   
     # Inclui o arquivo com as funcões
-    source $( dirname "${BASH_SOURCE[0]}")/../src/other-functions.sh
+    local script_dir
+    script_dir=$( dirname "${BASH_SOURCE[0]}")
+    source "${script_dir}/../src/other-functions.sh"
 }
 
 #oneTimeTearDown() {

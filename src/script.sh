@@ -1,4 +1,8 @@
 #!/bin/bash
+# Disable:
+# * Not following sources
+# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 
 printUsage() {
     cat <<EOT
