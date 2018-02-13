@@ -14,7 +14,7 @@ oneTimeSetUp()
     #mkdir coverage
     kcov_cmd=(kcov "--exclude-path=/root/shunit2,/source/build.sh,/source/test")
     coverage_dir="/source/test/coverage"
-    kcov_cmd="${coverage_dir}"
+    kcov_cmd+="${coverage_dir}"
 
     script="${kcov_cmd[@]} /source/script.sh"
     unset coverage_dir kcov_cmd
