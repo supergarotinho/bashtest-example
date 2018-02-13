@@ -1,5 +1,9 @@
 #!/bin/sh
 # vim:et:ft=sh:sts=2:sw=2
+
+# Disable:
+# * Not following sources
+# shellcheck disable=SC1090
 # shellcheck disable=SC1091
 
 # This is called once before any tests are run

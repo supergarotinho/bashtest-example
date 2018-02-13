@@ -1,6 +1,9 @@
 #! /bin/bash
-# shellcheck disable=SC1091
+
+# Disable:
+# * Not following sources
 # shellcheck disable=SC1090
+# shellcheck disable=SC1091
 
 testCleanVariable() {
     local expected returned
