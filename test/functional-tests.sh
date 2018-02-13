@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # vim:et:ft=sh:sts=2:sw=2
 
 # Disable:
@@ -9,15 +9,12 @@
 # This is called once before any tests are run
 oneTimeSetUp()
 {
-    # Coverage is on the build.sh because we can have multiple test scripts to run
-    #rm -rf coverage 2>/dev/null
-    #mkdir coverage
+    local coverage_dir kcov_cmd
     kcov_cmd=(kcov "--exclude-path=/root/shunit2,/source/build.sh,/source/test")
     coverage_dir="/source/test/coverage"
-    kcov_cmd+="${coverage_dir}"
+    kcov_cmd+=("${coverage_dir}")
 
-    script="${kcov_cmd[@]} /source/script.sh"
-    unset coverage_dir kcov_cmd
+    script="${kcov_cmd[*]} /source/src/script.sh"
 }
 
 #-----------------------------------------------------------------------------
@@ -32,7 +29,7 @@ testRunWithNoParameters()
     ${script} >/dev/null
     rtrn=$?
 
-    assertTrue "Expected returned value of 0, but got ${rtrn}." "[ ${rtrn} -eq 0 ]"
+    assertTrue "Expected returned value of 1, but got ${rtrn}." "[ ${rtrn} -eq 1 ]"
 }
 
 testInvalidOption()
@@ -43,7 +40,7 @@ testInvalidOption()
     assertTrue "Expected 255, but got ${rtrn}." "[ ${rtrn} -eq 255 ]"
 }
 
-testSample()
+testWithDir()
 {
     ${script} -d directory >/dev/null
     rtrn=$?

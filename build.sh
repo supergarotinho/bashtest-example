@@ -50,7 +50,7 @@ then
         docker run --rm \
           --security-opt seccomp=unconfined \
           -v "$(pwd)":/source \
-          -e "TERM=xterm-256color" supergarotinho/bashtest "${file}" "${kcov_cmd[@]}"
+          -e "TERM=xterm-256color" supergarotinho/bashtest "${file}"
         result=$?
         [ $result -eq 0 ] && e_success "${file} passed!"
         [ ! $result -eq 0 ] && e_error "${file} failed!" && failed=true
