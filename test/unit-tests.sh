@@ -1,8 +1,11 @@
-#! /bin/sh
+#! /bin/bash
+# shellcheck disable=SC1091
+# shellcheck disable=SC1090
 
 testCleanVariable() {
-    local expected="test abc qwe"
-    local returned=$(cleanVariable "   ,test,     abc qwe       . ")
+    local expected returned
+    expected="test abc qwe"
+    returned=$(cleanVariable "   ,test,     abc qwe       . ")
 
     assertEquals "Expected \"${expected}\", but returned ${returned}" "${expected}" "${returned}"
 # Regex optins

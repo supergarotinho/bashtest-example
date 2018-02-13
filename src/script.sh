@@ -32,7 +32,7 @@ EXECUTION_DIR="$( dirname "${BASH_SOURCE[0]}")"
 BOOLEAN_ARG=false
 
 # Faz os imports
-source $EXECUTION_DIR/other-functions.sh
+source "${EXECUTION_DIR}/other-functions.sh"
 
 # Copy the arguments to a new array, to avoid problems with spaces
 arguments=()
@@ -63,7 +63,7 @@ do
             exit 0
         ;;
         *)
-            echo "Unknown option: $argumento"
+            echo "Unknown option: $argument"
             exit -1
         ;;
     esac

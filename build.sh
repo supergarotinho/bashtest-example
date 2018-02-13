@@ -1,4 +1,7 @@
 #!/bin/bash
+# Disable:
+# * Not following sources
+# shellcheck disable=SC1091
 
 # Measure time
 start=$SECONDS
@@ -46,7 +49,7 @@ then
 fi
 
 e_header "Running spellcheck..."
-for file in ./*.sh
+for file in ./**/*.sh
 do
     e_arrow "Running spellcheck on: ${file}"
     docker run -v "$(pwd)":/mnt koalaman/shellcheck "${file}"

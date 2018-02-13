@@ -1,5 +1,6 @@
 #!/bin/sh
 # vim:et:ft=sh:sts=2:sw=2
+# shellcheck disable=SC1091
 
 # This is called once before any tests are run
 oneTimeSetUp()
@@ -47,5 +48,5 @@ testSample()
 }
 
 # load and run shUnit2
-[ -n "${ZSH_VERSION:-}" ] && SHUNIT_PARENT=$0
+#[ -n "${ZSH_VERSION:-}" ] && SHUNIT_PARENT=$0
 . /root/shunit2/shunit2
