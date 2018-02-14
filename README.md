@@ -1,4 +1,4 @@
-## Docker image of zeppelin notebook
+## Tetsting example for bash scripts
 
 ```
 [![Build Status](https://dockerbuildbadges.quelltext.eu/status.svg?organization=supergarotinho&repository=zeppelin)](https://hub.docker.com/r/supergarotinho/zeppelin/)
