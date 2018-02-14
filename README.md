@@ -23,8 +23,6 @@
 ### TODO
 
 * Tests if the commands are being parsed correctly
-* Unit tests
-* Builder
 * Build with shippable
 * Badges
   * Shippable
@@ -35,6 +33,7 @@
 * Images
   * Testing results
   * Coverage report
+* fail if the coverage is bellow some threshold
 
 ### Directory structure
 
