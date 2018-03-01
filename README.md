@@ -84,6 +84,8 @@
 ## TODO
 
 * Tests if the commands are being parsed correctly
+* Send coverage after executing all the tests
+  * using some tool with cobertura.xml
 * Images
   * Testing results
   * Coverage report
