@@ -86,9 +86,6 @@
 * Tests if the commands are being parsed correctly
 * Send coverage after executing all the tests
   * using some tool with cobertura.xml
-* Images
-  * Testing results
-  * Coverage report
 * fail if the coverage is bellow some threshold
 
 ## Getting Started
@@ -123,7 +120,9 @@ It will execute all tests inside test dir and generate a coverage report at: ```
 
 ## Last test results
 
+![Test results](docs/images/bash-testing.png)
 
+![Test results](docs/images/bash-coverage.png)
 
 ## Built With
 
