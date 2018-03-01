@@ -17,9 +17,8 @@
       alt="Build Status" />
   </a>
   <!-- Coverage Status -->
-  <a href="https://coveralls.io/github/supergarotinho/bashtest-example?branch=master">
-    <img src="https://coveralls.io/repos/github/supergarotinho/bashtest-example/badge.svg?branch=master"
-      alt="Coverage Status" />
+  <a href="https://codecov.io/gh/supergarotinho/bashtest-example">
+    <img src="https://codecov.io/gh/supergarotinho/bashtest-example/branch/master/graph/badge.svg" />
   </a>
   <!-- Price -->
   <a href="https://github.com/supergarotinho/bashtest-example/blob/master/LICENSE">
@@ -53,7 +52,7 @@
 ## Table of contents
 
 - [Features](#features)
-- [TODO](#todo)
+- [To do](#to-do)
 - [Getting Started](#getting-started)
   - [How to use it](#how-to-use-it)
 - [Running the tests](#running-the-tests)
@@ -81,11 +80,9 @@
   * Cache the docker images
   * Detects if it is building from travis to generate coveralls results
 
-## TODO
+## To do
 
 * Tests if the commands are being parsed correctly
-* Send coverage after executing all the tests
-  * using some tool with cobertura.xml
 * fail if the coverage is bellow some threshold
 
 ## Getting Started
