@@ -76,11 +76,14 @@
   * Show elapsed time
   * **TODO:** fail if the coverage is bellow some threshold
 * Special methods for logging
+* CI
+  * Configured to work with travis
+  * Cache the docker images
+  * Detects if it is building from travis to generate coveralls results
 
 ## TODO
 
 * Tests if the commands are being parsed correctly
-* Build with jenkins
 * Images
   * Testing results
   * Coverage report
