@@ -117,7 +117,7 @@ It will execute all tests inside test dir and generate a coverage report at: ```
 
 ## Last test results
 
-![Test results](docs/images/bash-testing.png)
+<img src="docs/images/bash-testing.png" width="450">
 
 ![Test results](docs/images/bash-coverage.png)
 
