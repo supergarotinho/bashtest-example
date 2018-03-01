@@ -81,7 +81,6 @@
 
 * Tests if the commands are being parsed correctly
 * Build with jenkins
-* Table of contents
 * Images
   * Testing results
   * Coverage report
@@ -116,6 +115,10 @@ Just call:
 ./build.sh
 ```
 It will execute all tests inside test dir and generate a coverage report at: ```test/coverage``` folder
+
+## Last test results
+
+
 
 ## Built With
 

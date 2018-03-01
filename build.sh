@@ -22,6 +22,11 @@ mkdir -p test/coverage
 failed=false
 
 kcov_cmd=(kcov "--exclude-path=/root/shunit2,/source/build.sh,/source/test")
+if [[ ! -z "${TRAVIS_JOB_ID}" ]]
+then
+    kcov_cmd+=("--coveralls-id=${TRAVIS_JOB_ID}")
+fi
+echo "${kcov_cmd[@]}"
 actual_dir=$( dirname "${BASH_SOURCE[0]}")
 coverage_dir="${actual_dir}/test/coverage"
 kcov_cmd+=("${coverage_dir}")
@@ -77,4 +82,7 @@ minutes=$((total / 60))
 seconds=$((total % 60))
 printf "%d minutes and %02d seconds\\n" ${minutes} ${seconds}
 
-[ ${failed} == "true" ] && exit 1
+if [ "${failed}" == "true" ]
+then
+  exit 1
+fi
