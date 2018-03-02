@@ -83,11 +83,6 @@
 ## To do
 
 * Tests if the commands are being parsed correctly
-  * Fazer um node que lê o index.json
-    * Pega o valor do coverage do merged_files (se houver) da variável data
-    * Caso contrário, pega o valor do coverage do primeiro item
-    * Se não houver item, imprime zero, caso contrário imprime o coverage encontrado
-* fail if the coverage is bellow some threshold
 
 ## Getting Started
 
