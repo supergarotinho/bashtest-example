@@ -65,7 +65,7 @@
 ## Features
 
 * Command parsing
-  * Parse commands in defferent orders
+  * Parse commands in different orders
   * Check for required commands
   * Parse commands separated by space
 * Testing
@@ -73,16 +73,16 @@
   * Runs linter and checker
 * Build
   * Show elapsed time
-  * **TODO:** fail if the coverage is bellow some threshold
+  * Fail if the coverage is bellow some threshold
 * Special methods for logging
 * CI
   * Configured to work with travis
   * Cache the docker images
   * Detects if it is building from travis to generate coveralls results
-
-## To do
-
-* Tests if the commands are being parsed correctly
+* Testing Examples:
+  * Table testing
+  * Functional and unit tests
+  * Combination of parameters validation
 
 ## Getting Started
 
