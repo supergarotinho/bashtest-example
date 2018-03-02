@@ -73,9 +73,29 @@ do
     [ ! $result -eq 0 ] && e_error "${file} failed!" && failed=true
 done 9< <(find . -type f -not -path "*/coverage/*" -iname "*.sh")
 
-# TO generate a json and then put somewhere in the build
+e_header "Checking tests coverage..."
+# Check for the threshold, instead use the default (90.0)
+if [[ -z "${COVERAGE_THRESHOLD}" ]]
+then
+    COVERAGE_THRESHOLD=90
+fi
 
-#  -f json myscript myotherscript
+# Se if there is a coverage for merged_files
+covered=$(grep test/coverage/index.json -oe  "merged_files[^}]*[0-9]\\+\\.[0-9]\\+" | grep -oe "[0-9]\\+\\.[0-9]\\+" | grep -oe "^[0-9]\\+")
+if [[ -z "${covered}" ]]
+then
+    # check for one file threshold
+    covered=$(grep test/coverage/index.json -oe  "[^}]*[0-9]\\+\\.[0-9]\\+" | grep -oe "[0-9]\\+\\.[0-9]\\+" | grep -oe "^[0-9]\\+")
+fi
+
+# Finally check the coverage
+if [[ ${covered} -lt ${COVERAGE_THRESHOLD} ]]
+then
+  e_error "Coverage of: '${covered}' is bellow the threshold of ${COVERAGE_THRESHOLD} or is unknown"
+  failed="true"
+else
+  e_success "Coverage of: '${covered}' is equal or above the threshold of ${COVERAGE_THRESHOLD}"
+fi
 
 total=$((SECONDS - start))
 minutes=$((total / 60))
