@@ -52,7 +52,6 @@
 ## Table of contents
 
 - [Features](#features)
-- [To do](#to-do)
 - [Getting Started](#getting-started)
   - [How to use it](#how-to-use-it)
 - [Running the tests](#running-the-tests)
