@@ -13,7 +13,7 @@
 
   <!-- Build Status -->
   <a href="https://travis-ci.org/supergarotinho/bashtest-example">
-    <img src="https://travis-ci.org/supergarotinho/ambari-mongodb.svg?branch=master"
+    <img src="https://travis-ci.org/supergarotinho/bashtest-example.svg?branch=master"
       alt="Build Status" />
   </a>
   <!-- Coverage Status -->
