@@ -67,7 +67,7 @@ while read -r -u 9
 do
     file="${REPLY}"
     e_arrow "Running spellcheck on: ${file}"
-    docker run -v "$(pwd)":/mnt koalaman/shellcheck "${file}"
+    docker run --rm -v "$(pwd)":/mnt koalaman/shellcheck "${file}"
     result=$?
     [ $result -eq 0 ] && e_success "${file} passed!"
     [ ! $result -eq 0 ] && e_error "${file} failed!" && failed=true
