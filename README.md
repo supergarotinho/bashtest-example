@@ -57,7 +57,6 @@
 - [Running the tests](#running-the-tests)
 - [Built With](#built-with)
 - [Authors](#authors)
-- [Community](#community)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
